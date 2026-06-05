@@ -1,0 +1,181 @@
+/* ── Reset & Base ─────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg: #0d0d0d;
+  --surface: #1a1a2e;
+  --accent: #e94560;
+  --accent2: #f5a623;
+  --text: #e0e0e0;
+  --muted: #888;
+  --radius: 12px;
+  --max-w: 1100px;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+}
+
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ── Hero ─────────────────────────────────────────── */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background:
+    linear-gradient(135deg, rgba(233,69,96,0.15) 0%, rgba(13,13,13,0.95) 60%),
+    url('[i.imgur.com](https://i.imgur.com/placeholder.png)') center/cover no-repeat;
+  padding: 2rem;
+}
+
+.hero-content h1 {
+  font-family: 'Press Start 2P', monospace;
+  font-size: clamp(1.4rem, 5vw, 3rem);
+  color: var(--accent);
+  text-shadow: 0 0 20px rgba(233,69,96,0.6);
+  margin-bottom: 1rem;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  color: var(--muted);
+  margin-bottom: 2rem;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 0.75rem 1.75rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+.btn:hover { transform: translateY(-2px); text-decoration: none; }
+
+.btn-primary {
+  background: var(--accent);
+  color: #fff;
+  box-shadow: 0 4px 20px rgba(233,69,96,0.4);
+}
+.btn-primary:hover { box-shadow: 0 6px 28px rgba(233,69,96,0.6); }
+
+.btn-secondary {
+  background: transparent;
+  color: var(--text);
+  border: 2px solid var(--muted);
+}
+.btn-secondary:hover { border-color: var(--accent); color: var(--accent); }
+
+/* ── Sections ─────────────────────────────────────── */
+main { max-width: var(--max-w); margin: 0 auto; padding: 0 1.5rem; }
+
+section {
+  padding: 5rem 0;
+  border-bottom: 1px solid #222;
+}
+
+section h2 {
+  font-family: 'Press Start 2P', monospace;
+  font-size: clamp(1rem, 3vw, 1.5rem);
+  color: var(--accent2);
+  margin-bottom: 2rem;
+}
+
+section p { max-width: 720px; color: var(--text); }
+
+/* ── Video ────────────────────────────────────────── */
+.video-wrapper {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  border-radius: var(--radius);
+  margin-top: 2rem;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.6);
+}
+.video-wrapper iframe {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  border-radius: var(--radius);
+}
+
+/* ── Cards ────────────────────────────────────────── */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  border: 1px solid #2a2a40;
+  transition: transform 0.2s, border-color 0.2s;
+}
+.card:hover { transform: translateY(-4px); border-color: var(--accent); }
+
+.card h3 {
+  font-size: 1rem;
+  margin-bottom: 0.75rem;
+  color: var(--accent2);
+}
+
+.card ul { padding-left: 1.2rem; }
+.card ul li { margin-bottom: 0.4rem; font-size: 0.9rem; color: #ccc; }
+
+/* ── Team ─────────────────────────────────────────── */
+.team-photo {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.team-photo img {
+  max-width: 600px;
+  width: 100%;
+  border-radius: var(--radius);
+  border: 3px solid var(--accent);
+  box-shadow: 0 8px 40px rgba(233,69,96,0.3);
+}
+
+.member .handle { color: var(--muted); font-size: 0.85rem; margin-bottom: 0.5rem; }
+.member p:last-child { font-size: 0.9rem; color: #bbb; }
+
+/* ── kbd ──────────────────────────────────────────── */
+kbd {
+  background: #2a2a2a;
+  border: 1px solid #555;
+  border-radius: 4px;
+  padding: 2px 6px;
+  font-size: 0.78rem;
+  font-family: monospace;
+  color: var(--accent2);
+}
+
+/* ── Footer ───────────────────────────────────────── */
+footer {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: var(--muted);
+  font-size: 0.85rem;
+  border-top: 1px solid #222;
+}
+footer a { color: var(--muted); }
+footer a:hover { color: var(--accent); }
+footer p + p { margin-top: 0.5rem; }
