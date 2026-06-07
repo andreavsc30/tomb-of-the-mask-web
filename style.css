@@ -226,14 +226,50 @@ kbd {
   color: var(--accent2);
 }
 
+
 /* ── Footer ───────────────────────────────────────── */
 footer {
-  text-align: center;
   padding: 3rem 1rem;
   color: var(--muted);
   font-size: 0.85rem;
   border-top: 1px solid #1a1a1a;
 }
-footer a { color: var(--muted); }
-footer a:hover { color: var(--accent); }
-footer p + p { margin-top: 0.5rem; }
+
+.footer-content {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 1.5rem;
+}
+
+.footer-text {
+  text-align: left;
+}
+
+.footer-text a {
+  color: var(--muted);
+}
+
+.footer-text a:hover {
+  color: var(--accent);
+}
+
+.footer-text p + p {
+  margin-top: 0.5rem;
+}
+
+.upc-logo {
+  width: 90px;
+  height: 90px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+.upc-logo img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
